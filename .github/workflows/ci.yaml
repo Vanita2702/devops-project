@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # 1. Checkout
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Setup Python
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    # 3. Install dependencies
+    - name: Install Dependencies
+      run: |
+        pip install -r app/requirements.txt
+
+    # 4. Run tests
+    - name: Run Tests
+      run: |
+        pip install pytest
+        pytest tests/
+
+    # 5. Build Docker image (PACKAGE STEP)
+    - name: Build Docker Image
+      run: |
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-project:latest .
+
+    # 6. Login Docker Hub
+    - name: Login to Docker Hub
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    # 7. Push Image
+    - name: Push Docker Image
+      run: |
+        docker push ${{ secrets.DOCKER_USERNAME }}/devops-project:latest
