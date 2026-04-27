@@ -1,0 +1,10 @@
+Overview
+	
+A simple Flask-based Python web application that displays the message “Hello DevOps! Version: v1” when accessed through a web browser.
+
+
+Tech Stack
+
+*  Python – Programming language 
+*  Flask – Lightweight web framework for building the web application 
+*  Pip – Package manager for installing dependencies
