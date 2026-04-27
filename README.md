@@ -6,12 +6,12 @@ A simple Flask-based Python web application that displays the message “Hello Dev
 
 Tech Stack
 
-*  Python – Programming language 
-*  Flask – Lightweight web framework for building the web application 
-*  Pip – Package manager for installing dependencies
+?  Python – Programming language 
+?  Flask – Lightweight web framework for building the web application 
+?  Pip – Package manager for installing dependencies
 
 
-Setup Steps
+Steps
 
 1) Creating and cloning project to github.
 
@@ -34,6 +34,13 @@ Code path: https://github.com/Vanita2702/devops-project/blob/main/tests/test_app
 
 pip install pytest                   #pytest is a python testing framework.
 python -m pytest  tests/
+
+
+
+
+
+
+Making a change to see that if the test case is invalid or wrong the pipeline should fail.
 
 
 
@@ -87,7 +94,7 @@ o Click on new repositoritory secret and add username and password of dockerhub.
 Kubernetes Steps – Kubernetes pulls the image from dockerhub
 
 
-1) Create a deployement and service yaml file. Push to github repo.
+1) Create a deployment and service yaml file. Push to github repo.
 
 https://github.com/Vanita2702/devops-project/tree/main/k8s 
 
@@ -96,7 +103,7 @@ https://github.com/Vanita2702/devops-project/tree/main/k8s
 
 
 
-2) Apply k8s folder which consist of deployement and service.
+2) Apply k8s folder which consist of deployment and service.
 
 
 
@@ -148,7 +155,7 @@ ARGOCD – Argocd deploys
 
 
 
-Checkpoints to verify the changes:-
+Checkpoints to verify the changes: -
 1) Make a change in app.py
 2) Commit and sync changes
 3) Check github actions
@@ -165,12 +172,21 @@ Checkpoints to verify the changes:-
 
 
 
+
+
+
+
+
+
+
+
 K8s monitoring dashboard
-1) Install and create a service account  dashboard.
+1) Install and create a service account dashboard.
 
 
 2) Create cluster role binding
             
+
 3) Generate a token i.e. password 
  
 
@@ -187,9 +203,7 @@ K8s monitoring dashboard
 
 
 
-Output:- 
-
-
+Output:
 
 
 
