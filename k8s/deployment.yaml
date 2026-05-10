@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: devops-app
-        image: vanitavalluvan/devops-project:v4
+        image: vanitavalluvan/devops-project:v5
         ports:
         - containerPort: 5000
